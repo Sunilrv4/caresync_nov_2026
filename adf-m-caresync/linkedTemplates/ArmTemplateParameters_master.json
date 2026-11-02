@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-m-caresync"
+		},
+		"LS_ADLS_properties_typeProperties_url": {
+			"value": "https://caresyncstoragem.dfs.core.windows.net/"
+		},
+		"LS_PostgreSQL_KeyVault_properties_typeProperties_baseUrl": {
+			"value": "https://caresync-m-keyvault.vault.azure.net/"
+		},
+		"LS_PostgresSQL_properties_typeProperties_server": {
+			"value": "ep-noisy-silence-b33676z2-pooler.c-4.ap-southeast-1.aws.neon.tech"
+		},
+		"LS_PostgresSQL_properties_typeProperties_database": {
+			"value": "neondb"
+		},
+		"LS_PostgresSQL_properties_typeProperties_username": {
+			"value": "neondb_owner"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
