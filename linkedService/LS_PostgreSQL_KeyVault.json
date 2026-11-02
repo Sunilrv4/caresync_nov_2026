@@ -1,0 +1,10 @@
+{
+	"name": "LS_PostgreSQL_KeyVault",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://caresync-m-keyvault.vault.azure.net/"
+		}
+	}
+}
