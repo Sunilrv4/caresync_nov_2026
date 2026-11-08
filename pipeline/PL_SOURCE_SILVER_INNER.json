@@ -126,7 +126,7 @@
 				"type": "DatabricksNotebook",
 				"dependsOn": [
 					{
-						"activity": "Source to landing ingestion",
+						"activity": "Landing to bronze",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -159,11 +159,11 @@
 				}
 			},
 			{
-				"name": "Landing to bronze_copy1",
+				"name": "Landing to bronze",
 				"type": "DatabricksNotebook",
 				"dependsOn": [
 					{
-						"activity": "Bronze To Silver",
+						"activity": "Source to landing ingestion",
 						"dependencyConditions": [
 							"Succeeded"
 						]
