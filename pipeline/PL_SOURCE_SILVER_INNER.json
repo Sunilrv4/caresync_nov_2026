@@ -122,11 +122,45 @@
 				]
 			},
 			{
-				"name": "Landing to bronze",
+				"name": "Bronze To Silver",
 				"type": "DatabricksNotebook",
 				"dependsOn": [
 					{
 						"activity": "Source to landing ingestion",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/caresync-repo/caresync-adb-repo/Bronze_to_Silver",
+					"baseParameters": {
+						"landing_timestamp": {
+							"value": "@variables('start_time')",
+							"type": "Expression"
+						},
+						"table_name": "@activity('Read Table Details').output.firstRow.bronze_table_name"
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "LS_AzureDatabricks",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Landing to bronze_copy1",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "Bronze To Silver",
 						"dependencyConditions": [
 							"Succeeded"
 						]
