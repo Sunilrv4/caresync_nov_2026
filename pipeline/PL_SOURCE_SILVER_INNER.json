@@ -147,7 +147,10 @@
 							"value": "@variables('start_time')",
 							"type": "Expression"
 						},
-						"table_name": "@activity('Read Table Details').output.firstRow.bronze_table_name"
+						"table_name": {
+							"value": "@activity('Read Table Details').output.firstRow.silver_table_name",
+							"type": "Expression"
+						}
 					}
 				},
 				"linkedServiceName": {
