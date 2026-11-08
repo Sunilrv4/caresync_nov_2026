@@ -1,0 +1,19 @@
+{
+	"name": "LS_AzureDatabricks",
+	"properties": {
+		"annotations": [],
+		"type": "AzureDatabricks",
+		"typeProperties": {
+			"domain": "https://adb-7405604796374307.7.azuredatabricks.net",
+			"accessToken": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "LS_PostgreSQL_KeyVault",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "db-token"
+			},
+			"existingClusterId": "1103-162846-87bxzlpn"
+		}
+	}
+}
